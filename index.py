@@ -1,6 +1,16 @@
 from flask import Flask, request, session, redirect, url_for, render_template, send_from_directory
 from models import db, User, FileShare
 import os
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, File Sharing App is Running!"
+
+if __name__ == "__main__":
+    app.run()
 
 app = Flask(__name__)
 app.secret_key = 'supersecret'
